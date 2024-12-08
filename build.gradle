@@ -1,0 +1,35 @@
+
+
+group = 'co.com.orange.certification'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.49")
+    }
+}
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+apply plugin: 'java-gradle-plugin'
+dependencies {
+    implementation 'net.serenity-bdd:serenity-screenplay:4.1.6'//
+    implementation 'net.serenity-bdd:serenity-core:4.1.6'//
+    implementation 'net.serenity-bdd:serenity-junit:4.1.6'//
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:4.1.6'//
+    implementation 'net.serenity-bdd:serenity-cucumber:4.1.6'//
+    implementation('org.jvnet.com4j:com4j:2.1')
+    implementation('org.seleniumhq.selenium:selenium-server:3.14.0')
+    testImplementation'io.github.bonigarcia:webdrivermanager:5.9.2'
+    testImplementation('junit:junit:4.12')
+    implementation 'net.serenity-bdd:serenity-rest-assured:4.1.6'
+    implementation('com.google.code.gson:gson:2.8.6')
+    implementation('org.slf4j:slf4j-simple:2.0.7')
+}
